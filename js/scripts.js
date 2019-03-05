@@ -24,3 +24,19 @@ $(document).ready(function() {
     $("#result").show();
      });
    });
+
+
+
+   function forwards (word) {
+
+     for (i=0; i<word.length; i ++)
+     {
+      return result;
+    }
+   };
+
+   function palindrome (word)
+   {
+     return word.split ('').reverse().join('');
+    }
+    reverseWord ("racecar");
