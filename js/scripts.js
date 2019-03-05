@@ -1,4 +1,4 @@
-
+//factorial
 var factorial = function(number) {
   if (number === 0 || number === 1)
   {
@@ -11,9 +11,22 @@ for (var i = number - 1; i >= 1; i -=1)
 }
 return number;
 }
-
+//Palindrome
+function checkPalindrome(string)
+{
+  for (var i=0; i<=string.length/2; i++)
+  {
+    if (string[i] != string[string.length-1-i])
+    {
+      return false;
+    }
+  }
+  return true;
+}
+//factorial
 $(document).ready(function() {
-  $("form#factorial").submit(function(event) {
+  $("form#factorial").submit(function(event)
+  {
     event.preventDefault();
 
     var number = parseInt($("input#number").val());
@@ -23,20 +36,20 @@ $(document).ready(function() {
 
     $("#result").show();
      });
+
+  //palindrome
+  $("form#palindrome").submit(function(event)
+  {
+    event.preventDefault();
+
+    var string = $("input#string").val();
+    var resultPalindrome = checkPalindrome(string);
+
+    $(".string").text(resultPalindrome);
+    $("#result-palindrome").show();
+
+  })
+
+
+
    });
-
-
-
-   function forwards (word) {
-
-     for (i=0; i<word.length; i ++)
-     {
-      return result;
-    }
-   };
-
-   function palindrome (word)
-   {
-     return word.split ('').reverse().join('');
-    }
-    reverseWord ("racecar");
