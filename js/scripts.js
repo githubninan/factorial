@@ -5,7 +5,7 @@ var factorial = function(number) {
     return 1;
   }
 
-for (var i = number - 1; i >= 1; i -=1)
+for (var i = number - 1; i >= 1; i --)
 {
   number *=i;
 }
@@ -23,6 +23,33 @@ function checkPalindrome(string)
   }
   return true;
 }
+
+//Prime Sifting
+var myArray = [];
+function isPrime(num)
+{
+  for (var i = 2; i < num; i++)
+  {
+    if (num % i === 0)
+    {
+      return  false;
+    }
+  }
+return num > 1;
+
+}
+function getPrime(num) {
+for (var index = num - 1; index > 1; index --)
+{
+  if (isPrime(index))
+  {
+    myArray.push(index);
+  }
+}
+alert (myArray);
+}
+
+
 //factorial
 $(document).ready(function() {
   $("form#factorial").submit(function(event)
@@ -47,9 +74,19 @@ $(document).ready(function() {
 
     $(".string").text(resultPalindrome);
     $("#result-palindrome").show();
-
   })
 
+  $("form#prime-number").submit(function(event)
+{
+  event.preventDefault();
+
+  var num = parseInt($("input#input-number").val());
+  var resultPrime = getPrime(num);
+  $(".prime-numbers").text(resultPrime);
+  $("#result-prime").show();
+  
+})
 
 
-   });
+
+ });
