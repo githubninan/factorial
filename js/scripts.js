@@ -75,7 +75,7 @@ $(document).ready(function() {
     $(".string").text(resultPalindrome);
     $("#result-palindrome").show();
   })
-
+//prime sifting
   $("form#prime-number").submit(function(event)
 {
   event.preventDefault();
@@ -84,7 +84,7 @@ $(document).ready(function() {
   var resultPrime = getPrime(num);
   $(".prime-numbers").text(resultPrime);
   $("#result-prime").show();
-  
+
 })
 
 
